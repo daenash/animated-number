@@ -1,0 +1,97 @@
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes animateInUp {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    color: green;
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes animateInDown {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    color: red;
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes animateOutUp {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes animateOutDown {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes numberAnimation {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-in-up {
+  --animName: animateInUp, appear;
+}
+
+.animate-out-up {
+  --animName: animateOutUp, disappear;
+}
+
+.animate-in-down {
+  --animName: animateInDown, appear;
+}
+
+.animate-out-down {
+  --animName: animateOutDown, disappear;
+}
+
+.animated-number-container {
+  display: flex;
+  transition: 0.5s;
+  position: relative;
+}
+
+.animated-number {
+  position: absolute;
+  animation-duration: 0.5s, 0.5s;
+  animation-name: var(--animName);
+  animation-fill-mode: forwards, forwards;
+}
